@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Demo</title>
+</head>
+<body>
+
+  <h1>Color Demo Game</h1>
+  <p>Virtual coins only</p>
+
+  <button onclick="showResult()">Show Demo Result</button>
+  <p id="result">Waiting...</p>
+
+  <script>
+    function showResult() {
+      const colors = ["Red", "Green", "Violet"];
+      const result = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById("result").textContent = "Result: " + result;
+    }
+  </script>
+
+</body>
+</html>

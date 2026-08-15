@@ -7,25 +7,257 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f2f3f7;color:#222}
-.header{background:#6d28d9;color:white;padding:18px;text-align:center}
-.header h1{margin:0;font-size:24px}
-.container{max-width:480px;margin:auto}
-.card{margin:14px;padding:18px;background:white;border-radius:16px;box-shadow:0 3px 12px #0001}
-.balance{text-align:center}
-.balance small{color:#777}
-.balance strong{display:block;font-size:30px;margin-top:6px}
-.period{text-align:center;color:#666}
-.timer{text-align:center;font-size:42px;font-weight:bold;margin:12px}
-.buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-button{border:0;border-radius:10px;padding:14px 4px;color:white;font-weight:bold;font-size:15px}
-.red{background:#ef4444}
-.green{background:#22c55e}
-.violet{background:#8b5cf6}
-.result{text-align:center;background:#f5f5f5;border-radius:10px;padding:14px;margin-top:15px;font-weight:bold}
-h2{margin-top:0;font-size:20px}
-.row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee}
-.note{text-align:center;color:#777;font-size:12px;padding:15px}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f2f3f7;
+  color:#222;
+}
+
+.container{
+  max-width:480px;
+  margin:auto;
+}
+
+.header{
+  background:#6d28d9;
+  color:white;
+  padding:18px;
+  text-align:center;
+}
+
+.header h1{
+  margin:0;
+  font-size:25px;
+}
+
+.card{
+  margin:14px;
+  padding:18px;
+  background:white;
+  border-radius:16px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.balance{
+  text-align:center;
+}
+
+.balance small{
+  color:#777;
+}
+
+.balance strong{
+  display:block;
+  font-size:30px;
+  margin-top:6px;
+}
+
+.period{
+  text-align:center;
+  color:#666;
+  font-size:18px;
+}
+
+.timer{
+  text-align:center;
+  font-size:42px;
+  font-weight:bold;
+  margin:12px;
+}
+
+.section-title{
+  font-weight:bold;
+  margin:18px 0 10px;
+}
+
+.bigsmall{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.colors{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+}
+
+.numbers{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+}
+
+button{
+  border:0;
+  border-radius:10px;
+  padding:13px 5px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.big{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Demo</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f2f3f7;
+  color:#222;
+}
+
+.container{
+  max-width:480px;
+  margin:auto;
+}
+
+.header{
+  background:#6d28d9;
+  color:white;
+  padding:18px;
+  text-align:center;
+}
+
+.header h1{
+  margin:0;
+  font-size:25px;
+}
+
+.card{
+  margin:14px;
+  padding:18px;
+  background:white;
+  border-radius:16px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.balance{
+  text-align:center;
+}
+
+.balance small{
+  color:#777;
+}
+
+.balance strong{
+  display:block;
+  font-size:30px;
+  margin-top:6px;
+}
+
+.period{
+  text-align:center;
+  color:#666;
+  font-size:18px;
+}
+
+.timer{
+  text-align:center;
+  font-size:42px;
+  font-weight:bold;
+  margin:12px;
+}
+
+.section-title{
+  font-weight:bold;
+  margin:18px 0 10px;
+}
+
+.bigsmall{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.colors{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+}
+
+.numbers{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+}
+
+button{
+  border:0;
+  border-radius:10px;
+  padding:13px 5px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.big{
+  background:#f59e0b;
+  color:white;
+}
+
+.small{
+  background:#3b82f6;
+  color:white;
+}
+
+.red{
+  background:#ef4444;
+  color:white;
+}
+
+.green{
+  background:#22c55e;
+  color:white;
+}
+
+.violet{
+  background:#8b5cf6;
+  color:white;
+}
+
+.number{
+  background:#e5e7eb;
+  color:#222;
+}
+
+.selected{
+  outline:4px solid #111;
+  transform:scale(.96);
+}
+
+.result{
+  text-align:center;
+  background:#f5f5f5;
+  border-radius:10px;
+  padding:14px;
+  margin-top:18px;
+  font-weight:bold;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.note{
+  text-align:center;
+  color:#777;
+  font-size:12px;
+  padding:15px;
+}
 </style>
 </head>
 
@@ -34,95 +266,254 @@ h2{margin-top:0;font-size:20px}
 <div class="container">
 
 <div class="header">
-<h1>COLOR DEMO</h1>
+  <h1>COLOR DEMO</h1>
 </div>
 
 <div class="card balance">
-<small>Virtual Balance</small>
-<strong>10,000 🪙</strong>
+  <small>Virtual Balance</small>
+  <strong>10,000 🪙</strong>
 </div>
 
 <div class="card">
 
-<div class="period">
-Period: <b id="period">100001</b>
-</div>
+  <div class="period">
+    Demo Period: <b id="period">100001</b>
+  </div>
 
-<div class="timer" id="timer">00:30</div>
+  <div class="timer" id="timer">00:30</div>
 
-<div class="buttons">
-<button class="red" onclick="selectColor('Red')">RED</button>
-<button class="green" onclick="selectColor('Green')">GREEN</button>
-<button class="violet" onclick="selectColor('Violet')">VIOLET</button>
-</div>
+  <div class="section-title">Big / Small</div>
 
-<div class="result" id="result">
-Choose a colour
-</div>
+  <div class="bigsmall">
+    <button class="big" onclick="selectChoice(this,'Big')">
+      BIG<br>5–9
+    </button>
+
+    <button class="small" onclick="selectChoice(this,'Small')">
+      SMALL<br>0–4
+    </button>
+  </div>
+
+  <div class="section-title">Color</div>
+
+  <div class="colors">
+    <button class="red" onclick="selectChoice(this,'Red')">RED</button>
+    <button class="green" onclick="selectChoice(this,'Green')">GREEN</button>
+    <button class="violet" onclick="selectChoice(this,'Violet')">VIOLET</button>
+  </div>
+
+  <div class="section-title">Number</div>
+
+  <div class="numbers">
+
+    <button class="number" onclick="selectChoice(this,'0')">0</button>
+    <button class="number" onclick="selectChoice(this,'1')">1</button>
+    <button class="number" onclick="selectChoice(this,'2')">2</button>
+    <button class="number" onclick="selectChoice(this,'3')">3</button>
+    <button class="number" onclick="selectChoice(this,'4')">4</button>
+    <button class="number" onclick="selectChoice(this,'5')">5</button>
+    <button class="number" onclick="selectChoice(this,'6')">6</button>
+    <button class="number" onclick="selectChoice(this,'7')">7</button>
+    <button class="number" onclick="selectChoice(this,'8')">8</button>
+    <button class="number" onclick="selectChoice(this,'9')">9</button>
+
+  </div>
+
+  <div class="result" id="result">
+    Choose Big/Small, Color or Number
+  </div>
 
 </div>
 
 <div class="card">
-<h2>Result History</h2>
 
-<div id="history">
-<div class="row"><span>100000</span><b>Green</b></div>
-<div class="row"><span>99999</span><b>Red</b></div>
-<div class="row"><span>99998</span><b>Violet</b></div>
-</div>
+  <h2>Result History</h2>
+
+  <div id="history">
+
+    <div class="row">
+      <span>100000</span>
+      <b>7 • Big • Green</b>
+    </div>
+
+    <div class="row">
+      <span>99999</span>
+      <b>2 • Small • Red</b>
+    </div>
+
+    <div class="row">
+      <span>99998</span>
+      <b>8 • Big • Violet</b>
+    </div>
+
+  </div>
+
 </div>
 
 <div class="note">
-Demo version • Virtual coins only
+  Demo version • Virtual coins only
 </div>
 
 </div>
 
 <script>
 
-let seconds=30;
-let period=100001;
+let seconds = 30;
+let period = 100001;
 
-function selectColor(color){
-document.getElementById("result").textContent=
-"Demo selection: "+color;
+function selectChoice(button, choice){
+
+  document.querySelectorAll("button").forEach(function(btn){
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+
+  document.getElementById("result").textContent =
+    "Demo selection: " + choice;
 }
 
 setInterval(function(){
 
-seconds--;
+  seconds--;
 
-if(seconds<0){
+  if(seconds < 0){
 
-seconds=30;
-period++;
+    seconds = 30;
+    period++;
 
-let colors=["Red","Green","Violet"];
-let result=colors[Math.floor(Math.random()*colors.length)];
+    let number = Math.floor(Math.random() * 10);
 
-document.getElementById("period").textContent=period;
+    let size = number >= 5 ? "Big" : "Small";
 
-document.getElementById("result").textContent=
-"Demo Result: "+result;
+    let colors = ["Red","Green","Violet"];
+    let color = colors[Math.floor(Math.random() * colors.length)];
 
-let history=document.getElementById("history");
+    document.getElementById("period").textContent = period;
 
-history.innerHTML=
-'<div class="row"><span>'+
-period+
-'</span><b>'+
-result+
-'</b></div>'+
-history.innerHTML;
+    document.getElementById("result").textContent =
+      "Demo Result: " + number + " • " + size + " • " + color;
 
-}
+    let history = document.getElementById("history");
 
-document.getElementById("timer").textContent=
-"00:"+String(seconds).padStart(2,"0");
+    history.innerHTML =
+      '<div class="row">' +
+      '<span>' + period + '</span>' +
+      '<b>' + number + ' • ' + size + ' • ' + color + '</b>' +
+      '</div>' +
+      history.innerHTML;
+  }
+
+  document.getElementById("timer").textContent =
+    "00:" + String(seconds).padStart(2,"0");
 
 },1000);
 
 </script>
 
 </body>
-</html>
+</html>￼Enterground:#f59e0b;
+  color:white;
+}
+
+.small{
+  background:#3b82f6;
+  color:white;
+}
+
+.red{
+  background:#ef4444;
+  color:white;
+}
+
+.green{
+  background:#22c55e;
+  color:white;
+}
+
+.violet{
+  background:#8b5cf6;
+  color:white;
+}
+
+.number{
+  background:#e5e7eb;
+  color:#222;
+}
+
+.selected{
+  outline:4px solid #111;
+  transform:scale(.96);
+}
+
+.result{
+  text-align:center;
+  background:#f5f5f5;
+  border-radius:10px;
+  padding:14px;
+  margin-top:18px;
+  font-weight:bold;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.note{
+  text-align:center;
+  color:#777;
+  font-size:12px;
+  padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+  <h1>COLOR DEMO</h1>
+</div>
+
+<div class="card balance">
+  <small>Virtual Balance</small>
+  <strong>10,000 🪙</strong>
+</div>
+
+<div class="card">
+
+  <div class="period">
+    Demo Period: <b id="period">100001</b>
+  </div>
+
+  <div class="timer" id="timer">00:30</div>
+
+  <div class="section-title">Big / Small</div>
+
+  <div class="bigsmall">
+    <button class="big" onclick="selectChoice(this,'Big')">
+      BIG<br>5–9
+    </button>
+
+    <button class="small" onclick="selectChoice(this,'Small')">
+      SMALL<br>0–4
+    </button>
+  </div>
+
+  <div class="section-title">Color</div>
+
+  <div class="colors">
+    <button class="red" onclick="selectChoice(this,'Red')">RED</button>
+    <button class="green" onclick="selectChoice(this,'Green')">GREEN</button>
+    <button class="violet" onclick="selectChoice(this,'Violet')">VIOLET</button>
+  </div>
+
+  <div class="section-title">Number</div>
+
+  <div class="numbers">
+
+    <button class="number" onclick="selectChoice(this,'0')">0</button>

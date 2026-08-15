@@ -5,108 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Color Demo</title>
 
-le>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #222;
-    }
-
-    .header {
-      background: #7c3aed;
-      color: white;
-      padding: 18px;
-      text-align: center;
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    .balance {
-      margin: 15px;
-      padding: 18px;
-      background: white;
-      border-radius: 14px;
-      text-align: center;
-      box-shadow: 0 2px 8px #0001;
-    }
-
-    .balance strong {
-      display: block;
-      font-size: 28px;
-      margin-top: 6px;
-    }
-
-    .game {
-      margin: 15px;
-      padding: 18px;
-      background: white;
-      border-radius: 14px;
-      text-align: center;
-      box-shadow: 0 2px 8px #0001;
-    }
-
-    .period {
-      color: #666;
-      margin-bottom: 8px;
-    }
-
-    .timer {
-      font-size: 36px;
-      font-weight: bold;
-      margin: 10px 0 20px;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    button {
-      border: 0;
-      padding: 14px 8px;
-      border-radius: 10px;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .red {
-      background: #ef4444;
-    }
-
-    .green {
-      background: #22c55e;
-    }
-
-    .violet {
-      background: #8b5cf6;
-    }
-
-    .result {
-      margin-top: 18px;
-      padding: 14px;
-      background: #f9fafb;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .history {
-      margin: 15px;<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Demo</title>
-
   <style>
     * {
       box-sizing: border-box;
@@ -116,14 +14,13 @@ le>
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f3f4f6;
-      color: #222;
     }
 
     .header {
       background: #7c3aed;
       color: white;
-      padding: 18px;
       text-align: center;
+      padding: 18px;
     }
 
     .header h1 {
@@ -131,39 +28,36 @@ le>
       font-size: 24px;
     }
 
-    .balance {
+    .card {
       margin: 15px;
       padding: 18px;
       background: white;
       border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .balance {
       text-align: center;
-      box-shadow: 0 2px 8px #0001;
     }
 
     .balance strong {
       display: block;
       font-size: 28px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .game {
-      margin: 15px;
-      padding: 18px;
-      background: white;
-      border-radius: 14px;
       text-align: center;
-      box-shadow: 0 2px 8px #0001;
     }
 
     .period {
       color: #666;
-      margin-bottom: 8px;
     }
 
     .timer {
-      font-size: 36px;
+      font-size: 38px;
       font-weight: bold;
-      margin: 10px 0 20px;
+      margin: 15px 0;
     }
 
     .buttons {
@@ -174,8 +68,8 @@ le>
 
     button {
       border: 0;
-      padding: 14px 8px;
       border-radius: 10px;
+      padding: 15px 5px;
       color: white;
       font-size: 16px;
       font-weight: bold;
@@ -196,31 +90,19 @@ le>
     .result {
       margin-top: 18px;
       padding: 14px;
-      background: #f9fafb;
+      background: #f3f4f6;
       border-radius: 10px;
       font-weight: bold;
-    }
-
-    .history {
-      margin: 15px;
-      padding: 18px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px #0001;
-    }
-
-    .history h2 {
-      margin-top: 0;
     }
 
     .row {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0;
+      padding: 12px 0;
       border-bottom: 1px solid #eee;
     }
 
-    .demo-note {
+    .note {
       text-align: center;
       color: #777;
       font-size: 13px;
@@ -235,38 +117,43 @@ le>
     <h1>COLOR DEMO</h1>
   </div>
 
-  <div class="balance">
+  <div class="card balance">
     Virtual Balance
     <strong>10,000 🪙</strong>
   </div>
 
-  <div class="game">
-    <div class="period">Demo Period: <span id="period">100001</span></div>
+  <div class="card game">
+    <div class="period">
+      Demo Period: <span id="period">100001</span>
+    </div>
 
     <div class="timer" id="timer">00:30</div>
 
     <div class="buttons">
-      <button class="red" onclick="choose('Red')">RED</button>
-      <button class="green" onclick="choose('Green')">GREEN</button>
-      <button class="violet" onclick="choose('Violet')">VIOLET</button>
+      <button class="red" onclick="selectColor('Red')">RED</button>
+      <button class="green" onclick="selectColor('Green')">GREEN</button>
+      <button class="violet" onclick="selectColor('Violet')">VIOLET</button>
     </div>
 
     <div class="result" id="result">
-      Select a colour for the demo.
+      Select a colour for demo.
     </div>
   </div>
 
-  <div class="history">
+  <div class="card">
     <h2>Result History</h2>
+
     <div id="history">
       <div class="row">
         <span>100000</span>
         <strong>Green</strong>
       </div>
+
       <div class="row">
         <span>99999</span>
         <strong>Red</strong>
       </div>
+
       <div class="row">
         <span>99998</span>
         <strong>Violet</strong>
@@ -274,7 +161,7 @@ le>
     </div>
   </div>
 
-  <div class="demo-note">
+  <div class="note">
     Demo version — virtual coins only.
   </div>
 
@@ -282,9 +169,9 @@ le>
     let seconds = 30;
     let period = 100001;
 
-    function choose(colour) {
+    function selectColor(color) {
       document.getElementById("result").textContent =
-        "Demo selection: " + colour;
+        "Demo selection: " + color;
     }
 
     setInterval(function () {
@@ -295,19 +182,23 @@ le>
         period++;
 
         const colors = ["Red", "Green", "Violet"];
-        const result = colors[Math.floor(Math.random() * colors.length)];
+        const result =
+          colors[Math.floor(Math.random() * colors.length)];
+
+        document.getElementById("period").textContent = period;
 
         document.getElementById("result").textContent =
           "Demo Result: " + result;
 
-        document.getElementById("period").textContent = period;
-
         const history = document.getElementById("history");
 
         history.innerHTML =
-          '<div class="row"><span>' + period +
-          '</span><strong>' + result +
-          '</strong></div>' + history.innerHTML;
+          '<div class="row"><span>' +
+          period +
+          '</span><strong>' +
+          result +
+          '</strong></div>' +
+          history.innerHTML;
       }
 
       document.getElementById("timer").textContent =
@@ -317,13 +208,4 @@ le>
   </script>
 
 </body>
-</html>￼Enter
-      padding: 18px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px #0001;
-    }
-
-    .history h2 {
-      margin-top: 0;
-    }
+</html>
